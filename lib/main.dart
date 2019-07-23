@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'models/item.dart';
 
 void main() => runApp(App());
@@ -49,7 +48,11 @@ class _HomePageState extends State<HomePage> {
             title: Text(item.title),
             key: Key(item.title),
             value: item.done,
-            onChanged: (value) {},
+            onChanged: (value) {
+              setState(() {
+                item.done = value;
+              });
+            },
           );
         },
       ),
